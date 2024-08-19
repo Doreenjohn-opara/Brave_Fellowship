@@ -10,6 +10,16 @@ function calculateSubtotal(items) {
   return items.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
+// Second way of calculating subtotal using for loop.
+
+function calculateSubtotalForLoop(items) {
+  let subtotal1 = 0;
+  for (let i = 0; i < items.length; i++) {
+    subtotal1 += items[i].price * items[i].quantity;
+  }
+  return subtotal1;
+}
+
 // const subtotal = calculateSubtotal(items);
 // console.log(subtotal);
 
@@ -19,6 +29,13 @@ function applyDiscount(subtotal, discountPercentage) {
   return subtotal - discountAmount;
 }
 
+// Another way of applying discount to subtotal
+function applyDiscount(subtotal, discountPercentage) {
+  const discountAmount = subtotal * (discountPercentage / 100);
+  const discountedTotal = subtotal - discountAmount;
+  return discountedTotal;
+  }
+
 // const subtotal = 17000;
 // const discountPercentage = 15;
 // const discountedTotal = applyDiscount(subtotal, discountPercentage);
@@ -27,6 +44,13 @@ function applyDiscount(subtotal, discountPercentage) {
 // Calculating the total amount with tax.
 function calculateTax(discountedTotal, taxRate) {
   return discountedTotal * (1 + taxRate / 100);
+}
+
+// Another way of calculating total amount with tax using const
+function calculateTax(discountedTotal, taxRate) {
+  const tax = 1 + taxRate / 100
+  const discountedAmount = discountedTotal * tax
+  return discountedAmount;
 }
 
 // const discountedTotal = 14450;
@@ -42,6 +66,7 @@ function calculateTotal(items, discountPercentage, taxRate) {
     return totalWithTax;
   }
 
+
 // Testing the functionality
 const discountPercentage = 10;
 const taxRate = 8;
@@ -53,5 +78,4 @@ const totalWithTax = calculateTotal(items, discountPercentage, taxRate);
 console.log(`Subtotal: ₦${subtotal.toFixed(2)}`);
 console.log(`Discounted Total: ₦${discountedTotal.toFixed(2)}`);
 console.log(`Total with Tax: ₦${totalWithTax.toFixed(2)}`);
-
   

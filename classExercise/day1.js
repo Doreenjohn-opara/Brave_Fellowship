@@ -50,17 +50,17 @@ function greet() {
 greet();
 // functions can take arguments
 function greet(name) {
-    for (let i = 0; i < name.length; i++) {
-        console.log("Good Morning, " + name[i]);
-    }
+  for (let i = 0; i < name.length; i++) {
+    console.log("Good Morning, " + name[i]);
+  }
 }
 
-greet(['Victoria', 'Isaac', 'Samson', 'Temitope', 'Elijah'])
+greet(["Victoria", "Isaac", "Samson", "Temitope", "Elijah"]);
 
 function multiplicationTable(number, limit) {
-    for (let i = 1; i <= limit; i++) {
-        console.log(`${number} * ${i} = ${number * i}`);
-    }
+  for (let i = 1; i <= limit; i++) {
+    console.log(`${number} * ${i} = ${number * i}`);
+  }
 }
 
-multiplicationTable(3,24);
+multiplicationTable(3, 24);
